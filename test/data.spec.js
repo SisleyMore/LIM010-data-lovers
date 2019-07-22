@@ -408,8 +408,7 @@ const arrayIndicadoresTest = [
   },
 ];
 
-const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)'];
-
+const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)']; ['PER-Fuerza laboral con educación intermedia (% del total)']; ['PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
 // test variable global
 describe('bancoMundial', () => {
   it('deberia ser un objeto', () => {
@@ -421,13 +420,16 @@ describe('indicadorPorPais', () => {
   it('deberia retornar un array', () => {
     expect(bancoMundial.indicadorPorPais(dataWorldBank, 'PER')).toStrictEqual(arrayIndicadoresTest);
   });
+  // it('deberia ser una funcion', () => {
+  //   expect(typeof indicadorPorPais).toEqual('function');
+  // });
 });
 
 describe('nombreIndicadorPorPais', () => {
-  // it('deberia retornar un string', () => {
-  //   expect(bancoMundial.nombreIndicadorPorPais(dataWorldBank, 'PER').toStrictEqual(valorSalida));
-  // });
-  it('deberia ser una funcion', () => {
-    expect(typeof nombreIndicadorPorPais).toEqual('function');
+  it('deberia retornar un array', () => {
+    expect(bancoMundial.nombreIndicadorPorPais(indicadorPorPais(dataWorldBank, 'PER'))).toEqual(valorSalida);
   });
+  // it('deberia ser una funcion', () => {
+  //   expect(typeof nombreIndicadorPorPais).toEqual('function');
+  // });
 });
