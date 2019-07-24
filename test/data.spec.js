@@ -275,88 +275,9 @@ const output1 = [
   },
 ];
 
-const valorSalida = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
-
-const asdNuevoArray = [{key: '1960',
-  value: ''}, {key: '1961',
-  value: ''}, {key: '1962',
-  value: ''}, {key: '1963',
-  value: ''},
-{key: '1964',
-  value: ''}, {key: '1965',
-  value: ''}, {key: '1966',
-  value: ''}, {key: '1967',
-  value: ''},
-{key: '1968',
-  value: ''}, {key: '1969',
-  value: ''}, {key: '1970',
-  value: ''}, {key: '1971',
-  value: ''},
-{key: '1972',
-  value: ''}, {key: '1973',
-  value: ''}, {key: '1974',
-  value: ''}, {key: '1975',
-  value: ''},
-{key: '1976',
-  value: ''}, {key: '1977',
-  value: ''}, {key: '1978',
-  value: ''}, {key: '1979',
-  value: ''},
-{key: '1980',
-  value: ''}, {key: '1981',
-  value: ''}, {key: '1982',
-  value: ''}, {key: '1983',
-  value: ''},
-{key: '1984',
-  value: ''}, {key: '1985',
-  value: ''}, {key: '1986',
-  value: ''}, {key: '1987',
-  value: ''},
-{key: '1988',
-  value: ''}, {key: '1989',
-  value: ''}, {key: '1990',
-  value: ''}, {key: '1991',
-  value: ''},
-{key: '1992',
-  value: ''}, {key: '1993',
-  value: ''}, {key: '1994',
-  value: ''}, {key: '1995',
-  value: ''},
-{key: '1996',
-  value: ''}, {key: '1997',
-  value: ''}, {key: '1998',
-  value: ''}, {key: '1999',
-  value: ''},
-{key: '2000',
-  value: ''}, {key: '2001',
-  value: ''}, {key: '2004',
-  value: 84.8996963500977},
-{key: '2003',
-  value: 85.8513031005859}, {key: '2005',
-  value: 87.144401550293},
-{key: '2006',
-  value: 87.345703125}, {key: '2007',
-  value: 89.47509765625},
-{key: '2017',
-  value: 90.3086013793945}, {key: '2009',
-  value: 90.3177032470703},
-{key: '2013',
-  value: 90.3412017822266}, {key: '2015',
-  value: 90.7515029907227},
-{key: '2012',
-  value: 90.8386993408203}, {key: '2008',
-  value: 90.8488998413086},
-{key: '2011',
-  value: 91.0772018432617}, {key: '2014',
-  value: 91.1201019287109},
-{key: '2002',
-  value: 91.1489028930664}, {key: '2016',
-  value: 91.3912963867188},
-{key: '2010',
-  value: 91.5607986450195}];
 const output2 = ['PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)', 'PER-Fuerza laboral con educación intermedia (% del total)', 'PER-Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)'];
-const inputIndicador = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
-const outputData = {
+const input2 = 'PER-Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)';
+const output3 = {
   'data': {
     '1960': '',
     '1961': '',
@@ -422,11 +343,33 @@ const outputData = {
   'indicatorName': 'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)',
   'indicatorCode': 'SL.TLF.PART.FE.ZS'
 };
+const input3 = [{key: '2002',
+  value: 57.3788986206055}, {key: '2003',
+  value: 59.2597007751465}, {key: '2004',
+  value: 60.5155982971191}, {key: '2005',
+  value: 58.567699432373}, {key: '2006',
+  value: 59.5596008300781}, {key: '2007',
+  value: 62.5275993347168}];
 
-const descNuevoArray = [{'2002': 70.0301971435547}, {'2003': 69.0485000610352}, {'2004': 70.3840026855469},
-  {'2005': 68.869499206543}, {'2006': 69.7163009643555}, {'2007': 72.8778991699219},
-  {'2008': 72.2699966430664}];
-// test variable gl1obal
+const output4 = [{key: '2002',
+  value: 57.3788986206055}, {key: '2005',
+  value: 58.567699432373}, {key: '2003',
+  value: 59.2597007751465}, {key: '2006',
+  value: 59.5596008300781}, {key: '2004',
+  value: 60.5155982971191}, {key: '2007',
+  value: 62.5275993347168}];
+
+const output5 = [{key: '2007',
+  value: 62.5275993347168}, {key: '2004',
+  value: 60.5155982971191}, {key: '2006',
+  value: 59.5596008300781}, {key: '2003',
+  value: 59.2597007751465}, {key: '2005',
+  value: 58.567699432373}, {key: '2002',
+  value: 57.3788986206055}];
+
+const output6 = '59.63';
+  
+// test variable global
 describe('bancoMundial', () => {
   it('deberia ser un objeto', () => {
     expect(typeof bancoMundial).toBe('object');
@@ -451,12 +394,12 @@ describe('bancoMundial', () => {
     });
   });
   // test 3ra funcion 
-  describe('indicadorData', () => {
+  describe('bancoMundial.indicadorData', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.indicadorData).toEqual('function');
     });
-    it('deberia retornar un objeto', () => {
-      expect(bancoMundial.indicadorData(dataWorldBank, 'PER', inputIndicador)).toBe(outputData);
+    it('bancoMundial.indicadorData deberia retornar un objeto, donde contiene las propiedades de cada  indicador', () => {
+      expect(bancoMundial.indicadorData(input1, 'PER', input2)).toEqual(output3);
     });
   });
   // test 4ta funcion
@@ -464,17 +407,26 @@ describe('bancoMundial', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.asdValor).toBe('function');
     });
+    it('bancoMundial.asdValor deberia retornar un array de objetos, donde los valores son ordenados de menor a mayor', () => {
+      expect(bancoMundial.asdValor(input3)).toStrictEqual(output4);
+    });
   });
   // test 5ta funcion
   describe('desValor', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.desValor).toBe('function');
     });
+    it('bancoMundial.desValor deberia retornar un array de objetos, donde los valores son ordenados de mayor a menor', () => {
+      expect(bancoMundial.desValor(input3)).toStrictEqual(output5);
+    });
   });
   // test 6ta funcion
   describe('calcularProm', () => {
     it('deberia ser una funcion', () => {
       expect(typeof bancoMundial.calcularProm).toBe('function');
+    });
+    it('bancoMundial.calcularProm deberia retornar un promedio de los valores contenidos en el array del intervalo seleccionado', () => {
+      expect(bancoMundial.calcularProm(input3)).toBe(output6);
     });
   });
 });
