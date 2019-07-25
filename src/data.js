@@ -17,7 +17,6 @@ const indicadorData = (data, pais, indicador) => {
   let indicadorData = data[pais].indicators[indicador]; 
   return indicadorData;
 };
-
 // Funcion Ordenar Ascendente
 const asdValor = (array) =>{
   return array.sort((valor1, valor2) => {
