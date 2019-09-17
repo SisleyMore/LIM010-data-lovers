@@ -5,7 +5,6 @@ body {
     font-family: "Open Sans", "sans-serif";
     box-sizing: border-box; 
     background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-flow: column;
 }
@@ -21,7 +20,6 @@ background: #009FDA;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-border-bottom: 4px solid #002245;
 }
 .menu .logo {
 display: inline-block;   
@@ -48,8 +46,6 @@ width: 320px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid #002245;
-    padding: 10px;
 }
 .btn-nav {
     line-height: normal;
@@ -204,9 +200,6 @@ h1 {
     70%{margin-left: -200%;}
     100%{margin-left: -200%;}
 }
-.seccion-resultado{
-    width: 100%;
-}
 .recuadro-lateral{
     display: flex;
     flex-flow: row wrap;
@@ -230,7 +223,6 @@ h1 {
     border-spacing: 0;
     border: 1px solid #ddd; 
     font-size: 20px;
-    background: aliceblue;
 }
 table, th, td {
     border: 1px solid #002245;
@@ -255,13 +247,6 @@ table, th, td {
   }
   .margen{
       margin: 20px auto;
-  }
-  .link{
-    cursor: pointer;
-    color: #002245;
-    font-size: 15px;
-    margin: 30px;
-    text-align: center;
   }
 footer{
     font-size: 15px;
@@ -288,7 +273,13 @@ margin: 0px;
     display: block;
 }
 /*Aqui va mi pantalla grande */
-@media screen and (min-width:764px) {
+@media screen and (min-width:764px){
+    body {
+        background: url(./img/LatinAmericanCities.jpg),linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        background-repeat: no-repeat;
+        background-size: cover;
+        /*background: rgb(51, 121, 183);*/ 
+    }
     .centrar {
         display: flex;
         flex-flow: row;
@@ -298,7 +289,6 @@ margin: 0px;
         }
     .menu{
         padding: 1em;
-        border-top: none;
     }
     .btn-nav {
         font-size: 20px;
@@ -336,12 +326,8 @@ margin: 0px;
     .caja-diapositivas{
         max-width: 1280px; 
     }
-    /* .contenedor2 {
+    .contenedor2 {
         flex-flow: row;  
-    } */
-    .seccion-resultado{
-        display: flex;
-        flex-flow: row;
     }
     .recuadro-lateral{
         flex-flow: column nowrap;
@@ -350,7 +336,7 @@ margin: 0px;
     .listado {
         display: flex;
         flex-direction: column;
-        padding-left: 50px;
+        justify-content: center;
     }
     .recuadro-resultado{
         width: 100%;
@@ -368,9 +354,6 @@ margin: 0px;
         width: 30%;
         height: auto;
         align-items: center;
-    }
-    .link{
-        font-size: 25px;
     }
     footer{
         display: flex;

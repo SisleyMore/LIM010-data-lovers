@@ -1,10 +1,10 @@
 /* Manejo de data */
-// Funcion para acceder a los indicadores en un array de objetos cuando el usuario escoge un pais
+// Funcion para acceder a los indicadores cuando el usuario escoge un pais
 const indicadorPorPais = (data, pais) => { 
-  const arregloIndicadores = data[pais].indicators;
-  return arregloIndicadores;
+  const arrayIndicadores = data[pais].indicators;
+  return arrayIndicadores;
 };
-// Función para mostrar los nombres de indicadores en un nuevo array de string
+// Función para mostrar los nombres indicadores en un nuevo array
 const nombreIndicadorPorPais = (array) => { 
   let arregloNombreIndicador = [];
   for (let i = 0; i < array.length; i++) {
@@ -12,11 +12,12 @@ const nombreIndicadorPorPais = (array) => {
   }
   return arregloNombreIndicador;
 };
-// Función para acceder a los datos del indicador seleccionado
-const indicadorData = (data, pais, indice) => { 
-  let indicadorData = data[pais].indicators[indice]; 
+
+const indicadorData = (data, pais, indicador) => { 
+  let indicadorData = data[pais].indicators[indicador]; 
   return indicadorData;
 };
+
 // Funcion Ordenar Ascendente
 const asdValor = (array) =>{
   return array.sort((valor1, valor2) => {
@@ -33,7 +34,7 @@ const desValor = (array) =>{
       return 1;
   });
 };
-/* Funcion para obtener promedio de los datos*/
+/* Funcion para obtener promedio*/
 let suma = 0;
 let acum = 0;
 const calcularProm = (array) => {

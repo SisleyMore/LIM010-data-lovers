@@ -33,11 +33,19 @@ const btnDescend = document.getElementById('btn-descend');
 const areaPromedio = document.getElementById('boton-promedio');
 const btnPromedio = document.getElementById('promedio');
 const resultadoPromedio = document.getElementById('valor-promedio');
+
+let input1 = '';
+// console.log(fechaDesde.value);
+
+let input2 = '';
+
 /* DATA */
 let dataIndicador;
+
 /* Login del Usuario*/
 const ingreso = document.getElementById('ingresar');
 let intento = 0;
+
 ingreso.addEventListener('click', () => {
   const nombre = document.getElementById('usuario').value;
   const contrasena = document.getElementById('contrasena').value;
@@ -96,7 +104,7 @@ const cargarPagina = () => {
 };
 cargarPagina();
 
-/* Funcionalidad del navegador para desplegar las pestañas en la pantalla de portal de datos */
+/* Funcionalidad del navegador para desplegar las pestañas en la pantalla de bienvenida */
 const mostrarOcultar1 = (event) => {
   const tabSeleccionado = event.target.dataset.tabSeleccionado;
   const tabUno = document.getElementById('info-tab4');
@@ -138,8 +146,7 @@ explorar.addEventListener('click', () => {
 });
 
 /* Parametros del portal de datos */
-// Función para activar los input de paises de forma dinámica
-const opcionPaises = (arrayPaises) => {
+const opcionPaises = (arrayPaises) => {// Función para activar los input de paises de forma dinámica
   let paisesL = '';
   for (let i = 0; i < arrayPaises.length; i++) {
     paisesL += `<input type="radio" class="pais ${arrayPaises[i].code}" name="paises" value='${arrayPaises[i].code}'/><label>${arrayPaises[i].pais}</label>`;
@@ -169,8 +176,8 @@ listaIndicadores.addEventListener('change', (event) => {
   const indicadorSeleccionado = event.target.value;
   const pais = indicadorSeleccionado.split('-')[0];
   const intervalo = indicadorSeleccionado.split('-')[1];
-  // console.log(indicadorSeleccionado);
-  // console.log(intervalo);
+  console.log(indicadorSeleccionado);
+  console.log(intervalo);
 
   /* Funcion para establecer la primera fecha o rango de fecha en el input*/
   const listaFecha1 = (data) => {
@@ -190,20 +197,20 @@ listaIndicadores.addEventListener('change', (event) => {
   };
   // const dataAnios = WORLDBANK[pais].indicators[intervalo].data; 
   dataIndicador = indicadorData(WORLDBANK, pais, intervalo);
-  // test de la funcion indicador data
-  // console.log(indicadorData(WORLDBANK, pais, intervalo));
+  // test de la f indicador data
+  console.log(indicadorData(WORLDBANK, pais, intervalo));
+
   const dataAnios = dataIndicador.data;
   const arrayAnios = Object.keys(dataAnios);
   // console.log(arrayAnios);
+
   fechaDesde.innerHTML = listaFecha1(arrayAnios);
   fechaHasta.innerHTML = listaFecha2(arrayAnios);
 });
-// array que va a contener la data del indicador con el rango de fecha seleccionado
+
 let nuevoArray = [];
-// variables que van a contener el año seleccionado
-let input1 = '';
-let input2 = '';
 /* Evento para mostrar resultados en tabla*/
+// const mostrarTabla = document.getElementById('consultar');
 mostrarTabla.addEventListener('click', () => {
   nuevoArray = [];
   areaResultado.classList.remove('ocultar');// muestra la seccion de resultados  
@@ -220,12 +227,11 @@ mostrarTabla.addEventListener('click', () => {
   <th>Año</th>
   <th>Dato</th>
   </tr>`;
-  // iteracion de la data considerando el rango de años seleccionado
   Object.entries(dataIndicador.data).forEach(([key, value]) => {
     if (key >= input1 && key <= input2) {
       valorData += `<tr>
       <td>${key}</td>
-      <td>${value === '' ? 'S/I' : value.toFixed(2)}</td>
+      <td>${value === '' ? 'No tiene valor' : value.toFixed(2)}</td>
       </tr>`;
       nuevoArray.push({ 
         key: key, 
@@ -236,7 +242,7 @@ mostrarTabla.addEventListener('click', () => {
     // nuevoArray.push({key: key, value: value});
   });
   areaTabla.innerHTML = valorData;
-  // console.log(nuevoArray);
+  console.log(nuevoArray);
 });
 /* Eventos de los botones para ordenar*/
 btnAscend.addEventListener('click', () => {
@@ -251,7 +257,7 @@ btnAscend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'S/I' : newArr[x].value.toFixed(2)}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
@@ -270,21 +276,15 @@ btnDescend.addEventListener('click', () => {
   for (let x = 0; x < newArr.length; x++) {
     strYears += `<tr>
       <td>${newArr[x].key}</td>
-      <td>${newArr[x].value === '' ? 'S/I' : newArr[x].value.toFixed(2)}</td>
+      <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
   areaTabla.innerHTML = strYears;
-  // console.log(desValor(nuevoArray));
+
+  console.log(desValor(nuevoArray));
 });
 
 /* Evento para calcular el promedio de los datos*/
 btnPromedio.addEventListener('click', () => {
   resultadoPromedio.innerHTML = `El Promedio es: ${calcularProm(nuevoArray)} %` ;
 });
-
-// Limpiar seleccion 
-const limpiarSeleccion = () => {
-  location.reload();
-};
-const limpiarInfo = document.getElementById('borrar');
-limpiarInfo.addEventListener('click', limpiarSeleccion);
