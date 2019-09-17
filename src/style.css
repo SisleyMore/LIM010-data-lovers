@@ -1,388 +1,231 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}    
 body {
     margin:0;
     padding: 0;
     height: 100vh;
-    font-family: "Open Sans", "sans-serif";
-    box-sizing: border-box; 
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-flow: column;
 }
-.fondo1{
-background-image: url(./img/fondo1.png);
+.verde{
+    background-color: #23b574;
 }
-main {
-    flex:1;
+.formulario{
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
 }
-.centrar {
-width: 100%;
-background: #009FDA;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-border-bottom: 4px solid #002245;
+.contenedor{
+    flex-direction: column;
+    /* flex-wrap: wrap-reverse; */
+    justify-content: center;   
+    align-items: center; 
 }
-.menu .logo {
-display: inline-block;   
-margin-right: 1em; 
+.registro{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
 }
-.menu .logo .LATAM {
-    vertical-align: top;
-    height: 22px;
-} 
-.logo {
+.menu-nav{
     width: 100%;
-    margin: 10px auto;
-    align-content: center;
-}
-.latam
- {
-width: 320px;
-}
-.menu {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    border-top: 2px solid #002245;
-    padding: 10px;
+    font-size: 25px;
+    /* background-color: #43a97c; */
 }
-.btn-nav {
-    line-height: normal;
+.usuario{
+    font-size: 24px;
+    font-family: inherit;
+    margin-left: 8px;
+    color: #ffff;
+}
+.sesion-cerrar{
+    margin-right: 5px;
+    color: #ffff;
     text-decoration: none;
-    color: whitesmoke;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #009FDA;
-    border: none;
 }
-
-.menu :hover{
-    background: #002245;
-    border-radius: 1px;
-}
-
-h1 {
-    overflow: hidden;
-    height: 0px;
-    width: 0px;
-    margin:0;
-  }
-.contenedor {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;  
-    align-items: center;
-}
-.contenedor1 {
-    height: auto;
-    display: flex;
-    flex-direction: column;  
-}
-.contenedor2 {
-    height: auto;
-    display: flex;
-    flex-direction: column;  
-}
-.recuadro {
-    background: rgba(51, 121, 183, 1);
-    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    height: 568px;
-    margin: auto;
-    font-family: 'Open Sans';
-    color: #141313;
-    display: flex;
+.inputs {
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-.recuadro1 {
-    font-size: 16px;
-    line-height: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.formulario {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
     font-size: 20px;
-    line-height: 25px;
-}
-.caja {
-    width: 280px;
-    height: 45px;
-}
-.boton {
-    background: #002245;
-    border-radius: 5px;
-    border: 0px;
-    width: 280px;
-    height: 50px;
-    color: white;
-    font-size:15px;
-}
-.negrita {
-    font-weight: bold;
-}
-.centrado{
-    text-align: center;
-}
-.derecha {
-    text-align: right;
-    margin-top: 0px;
-}
-.blanco {
-    color: whitesmoke;
-    font-size: 20px;
-}
- .banco-mundial {
-    background: rgba(255, 251, 251, 0.9); 
-    color: #002245;
-    text-align: center;
-    font-size: 20px;
-    margin: 0px;
-    width: 100%;
-} 
-.fondo-blanco {
-    background: rgba(255, 251, 251, 0.9); 
-    color: #002245;
-    text-align: center;
-    font-size: 20px;
-    margin: 0px;
-    width: 100%;
-}
-.descripcion {
-    background-color: rgba(255, 251, 251, 0.9);
-    width: 100%;
-    height: 150px;
-    margin: 0 auto;
-    color: #002245;
-    text-align: justify;
-}
-.texto{
-    margin: 5px 10px;
-    vertical-align: center;
-}
-.rrss{
-    width: 40px;
+    width: 250px;
     height: 30px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-top: 15px;
+    outline: none;
+    border: 1px solid hsl(341, 89%, 61%);
 }
-.caja-diapositivas {
-    width : 100%;
-    display: flex;
-    margin: 30px auto;
-    overflow: hidden;
+.perfil{
     flex-direction: column;
     align-items: center;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
 }
-.slide {
+.text-area{
+    resize: none;
+    outline: none;
+    border: 1px solid hsl(341, 89%, 61%);
+    font-size: 18px;
+    margin: 0;
+    width: 300px;
+    height: 150px;
+}
+.template-post{
+    flex-direction: column;
+    padding: 2%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 2px solid #7c817e;
+    border-radius: 5px;
+    margin-top: 10px;
     width: 100%;
-} 
-.diapositivas ul {
-    list-style: none;
-    width: 300%;
-    padding-left: 0px;
-    display: flex;
-    animation: slide 20s infinite alternate;
-    animation-timing-function: ease-in;
-} 
-@keyframes slide {
-    0%{margin-left: 0%;}
-    30%{margin-left: 0%;}
-    35%{margin-left: -100%;}
-    65%{margin-left: -100%;}
-    70%{margin-left: -200%;}
-    100%{margin-left: -200%;}
+    height: auto;
 }
-.seccion-resultado{
+.btn-postear{
+    background-color: #fbaf3b;
+    width: 130px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 25px;
+    border: 1px;
+    margin-top: 15px;
+    outline: none;
+    color: white;
+}
+.iconos{
+    flex-direction: row;
+    margin-left: 15px;
+}
+.recuadro{
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+.buttons{
+    border-radius: 25px;
+    font-size: 14px;
+    height: 40px;
+    width: 180px;
+    border: 1px;
+    margin-top: 15px;
+    outline: none;
+    color: white;
+}
+.logo{
     width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    background-size: cover;
 }
-.recuadro-lateral{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;    
+.azul{
+    color: #3897f0;
+    text-decoration: none;
 }
-.recuadro-resultado{
-  display: flex;
-  flex-flow: row wrap;
-  border-spacing: 0;
-  border: 1px solid #ddd;
+.error {
+    color: #ed4956;
+    font-size: 17px;
+}
+.bold{
+    font-weight: 600;
+}
+.icono-remove{
+    height: 35px;
+    width: 35px;
+}
+.icono-edit{
+    height: 30px;
+    width: 30px;
 }
 
-.caja-indicadores{
-    width: 90%;
-    }
-.tabla-datos{
-    width: 80%;
+.modal {
+    background: hsl(139, 39%, 53%);
     margin: auto;
-    color: #002245;
+    border-radius: 33px;
+    width: 339px;
+    height: 185px;
     text-align: center;
-    border-spacing: 0;
-    border: 1px solid #ddd; 
-    font-size: 20px;
-    background: aliceblue;
+    position: absolute;
+    top: 152px;
+    left: 0;
+    right: 0;
 }
-table, th, td {
-    border: 1px solid #002245;
-} 
-.parametro {
-    background: #0071BC;
-    width: 90%;
-    border-radius: 15px;
-    margin: 5px auto;
-}
-  th, td {
-    padding: 5px;
-  }
-  tr:nth-child(even) {
-    background-color: #f2f2f2
-  }
-  .area-btn {
-    display: flex;
-    flex-flow: column;
-    width: 100%;
+.modalcontenido {
     margin: 20px;
-  }
-  .margen{
-      margin: 20px auto;
-  }
-  .link{
+}
+.cerrar {
+    color: #021f35;
+    float: right;
+    font-size: 48px;
     cursor: pointer;
-    color: #002245;
-    font-size: 15px;
-    margin: 30px;
-    text-align: center;
-  }
-footer{
-    font-size: 15px;
-    color: whitesmoke;
-    text-align:center;
-    width: 100%;
-    margin: 0px auto;
-    background: #009FDA;
 }
-.txt-final { 
-margin: 0px;
+.textModal {
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    position: absolute;
+    top: 49px;
+    color: #e73e77;
 }
-.fondo2{
-    background: whitesmoke;
+ .cerrar:hover .cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
-.fondo3{
-    background:url('./img/fondo3.png');
-    background-size: cover;
-  }
-.ocultar {
-    display: none;
+.flex{
+    display: flex;
 }
-.mostrar {
+.block{
     display: block;
 }
-/*Aqui va mi pantalla grande */
-@media screen and (min-width:764px) {
-    .centrar {
-        display: flex;
-        flex-flow: row;
-    }
-    .LATAM {
-        width: 50%;
-        }
-    .menu{
-        padding: 1em;
-        border-top: none;
-    }
-    .btn-nav {
-        font-size: 20px;
-        }
+.hide{
+    display: none;
+}
 
-    .recuadro {
-        width: 460px;
-        height: 516px;
-    }
-    .logo {
-        width: 100%;
-        height: 100px;
-        margin: 0px auto;
-    }
-    .caja {
-        width: 335px;
-    }
-    .boton {
-        align-self: center;
-    }
-    .banco-mundial {
-        width: 50%;
-    }
-    .fondo-blanco {
-        width: 300px;
-        height: 475px;
-    }
-    .descripcion{
-        font-size: 20px;
-        height: 130px;
-    }
-    .texto{
-        margin-top: 20px;
-    }
-    .caja-diapositivas{
-        max-width: 1280px; 
-    }
-    /* .contenedor2 {
-        flex-flow: row;  
-    } */
-    .seccion-resultado{
-        display: flex;
-        flex-flow: row;
-    }
-    .recuadro-lateral{
-        flex-flow: column nowrap;
-        justify-content: space-evenly;
-    }
-    .listado {
-        display: flex;
-        flex-direction: column;
-        padding-left: 50px;
-    }
-    .recuadro-resultado{
-        width: 100%;
-        flex-flow: row nowrap;
-      }
-    .tabla-datos{
-        width: 50%;
-    }
-    .parametro {
-        width: 80%;}
-    .caja-indicadores{
-    width: 80%;
-    }
-    .area-btn{
-        width: 30%;
-        height: auto;
-        align-items: center;
-    }
-    .link{
-        font-size: 25px;
-    }
-    footer{
-        display: flex;
-        flex-direction: row; 
-        justify-content: space-around;
-        height: 50px;
-        align-items: center;
-    }
-    .ocultar {
-        display: none;
-    }
-    .mostrar {
-        display: block;
-    }
+@media screen and (min-width:801px) {
+.contenedor{
+    width: 100%;
+    height: 100vh;
+    flex-direction: row;
+}
+.modal {
+    border-radius: 33px;
+    width: 426px;
+    height: 193px;
+    display: flex;
+    align-content: center;
+}
+.imputs{
+    font-size: 20px;
+    width: 250px;
+    height: 30px;
+}
+.formulario{
+    font-size: 20px;
+}
+.text-area{
+    font-size: 20px;
+    width: 350px;
+    height: 150px;
+}
+.btn-postear{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 1px;
+    margin-top: 15px;
+}
+.text-area{
+    font-size: 18px;
+    width: 400px;
+    height: 200px;
+}
+.template-post{
+    font-size: 20px;
+}
 }

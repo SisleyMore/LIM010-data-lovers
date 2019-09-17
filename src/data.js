@@ -1,54 +1,34 @@
-/* Manejo de data */
-// Funcion para acceder a los indicadores en un array de objetos cuando el usuario escoge un pais
-const indicadorPorPais = (data, pais) => { 
-  const arregloIndicadores = data[pais].indicators;
-  return arregloIndicadores;
+const validarEmail = (email) => {
+  const expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return expr.test(email);
 };
-// Función para mostrar los nombres de indicadores en un nuevo array de string
-const nombreIndicadorPorPais = (array) => { 
-  let arregloNombreIndicador = [];
-  for (let i = 0; i < array.length; i++) {
-    arregloNombreIndicador.push(array[i].countryCode + '-' + array[i].indicatorName);
-  }
-  return arregloNombreIndicador;
+
+const pintarArray = (arr, ele) => {
+  for (let x = 0; x < arr.length; x++) {
+    ele.innerHTML += `<div class='template-post flex'><textarea id="post-guardado" class="text-area flex" name="post-guardado" readonly="true">${arr[x]}</textarea>
+      <div class="iconos flex"><img id=${x} name= "edit" class="icono-edit" src="img/icono-edit.png"><img id=${x} name= "save" class="icono-remove" src="img/icono-save.png">
+      <img id=${x} class="icono-remove" name = "remove" src="img/icono-remove.png"></div></div>`;
+  } 
 };
-// Función para acceder a los datos del indicador seleccionado
-const indicadorData = (data, pais, indice) => { 
-  let indicadorData = data[pais].indicators[indice]; 
-  return indicadorData;
+const obtenerLocalStorage = (string) => {
+  return JSON.parse(localStorage.getItem(string));
 };
-// Funcion Ordenar Ascendente
-const asdValor = (array) =>{
-  return array.sort((valor1, valor2) => {
-    if (valor1.value > valor2.value) return 1;
-    else
-      return -1;
-  });
+const actualizarLocalStorage = (string, arr) => {
+  localStorage.setItem(string, JSON.stringify(arr));
 };
-// Funcion Ordenar Descendente
-const desValor = (array) =>{
-  return array.sort((valor1, valor2) => {
-    if (valor1.value > valor2.value) return -1;
-    else
-      return 1;
-  });
+const eliminarElementoArray = (arr, indice) => {
+  arr.splice(indice, 1);
+  return arr;
 };
-/* Funcion para obtener promedio de los datos*/
-let suma = 0;
-let acum = 0;
-const calcularProm = (array) => {
-  array.forEach(elem => {
-    suma += elem.value; 
-    acum ++; // numero de valores 
-  });
-  return (suma / acum).toFixed(2);
+const guardarElementoArray = (arr, indice, newEle) => {
+  arr.splice(indice, 1, newEle);
+  return arr;
 };
-// se agrega las funciones a nuestro objeto global window
-window.bancoMundial = {
-  indicadorPorPais: indicadorPorPais,
-  indicadorData: indicadorData,
-  asdValor: asdValor,
-  desValor: desValor,
-  nombreIndicadorPorPais: nombreIndicadorPorPais, 
-  calcularProm: calcularProm,
+window.redSocial = {
+  validarEmail: validarEmail,
+  obtenerLocalStorage: obtenerLocalStorage,
+  actualizarLocalStorage: actualizarLocalStorage,
+  eliminarElementoArray: eliminarElementoArray,
+  guardarElementoArray: guardarElementoArray,
+  pintarArray: pintarArray,
 };

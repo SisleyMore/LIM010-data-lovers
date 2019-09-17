@@ -1,147 +1,60 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>LATAMSts360</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="shortcut icon" href= "img/favicon.ico"/>
-  <link rel="stylesheet" href="style.css" />
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="style.css" />
+ <title>Social Network</title>
 </head>
-
-<body id="body" class="fondo1">
-  <header class="ocultar centrar" id="encabezado">
-    <figure class="logo">
-      <img class="latam" src="./img/logo.png" alt="Logo-LATAM">
-    </figure>
-    <h1>LATAM Statistics 360°</h1>
-    <nav class="menu">
-        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-1">¿Quienes Somos?</button>
-        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-2">Portal de Datos</button>
-        <button class="btn-nav tab" type="button" name="boton" data-tab-seleccionado ="tab-3">Contáctanos</button>
-    </nav>
-  </header>
-
-  <main>
-  <!-- Pantalla de Login -->
-  <section class="contenedor" id="logueo">
-      <div class="recuadro">
-         <img class="logo" src="./img/logo.png" alt="LATAMSts360">
-      <form class="formulario">
-        <label for="usuario">Usuario</label>
-        <input class="caja" id="usuario" type="text">
-        <label for="contrasena">Contraseña</label>
-        <input class="caja" id="contrasena" type="password">
-        <p class="derecha negrita">¿Olvidaste tu contraseña?</p>   
-      </form>
-        <div class="recuadro1">
-          <button class="boton negrita" type="submit" id="ingresar">INGRESA</button>
-          <p class="centrado">¿No tienes una cuenta? <span class="negrita">Regístrate</span></p>
-          <p class="blanco negrita centrado" id="error"></p>
-        </div>
-      </div>
-      <h4 class="banco-mundial">Powered by <img src="./img/logoBM.svg" alt="banco-mundial"></h4>
-  </section>
-
- <!-- Pantalla de Bienvenida -->
-<section class="contenedor1 ocultar" id="bienvenida">
-  <div class="descripcion ocultar negrita" id="info-tab1">
-    <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
-    </h4>
-  </div>
-  <div class="descripcion ocultar negrita" id="info-tab2">
-     <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
-   </div>
-   <div class="descripcion ocultar negrita" id="info-tab3">
-       <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
-         <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
-         <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
-         <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
-         <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
-     </div>
-<div class="caja-diapositivas">
-  <div class="diapositivas">
-  <ul>
-    <li><img class="slide" src="./img/img1.png" alt="Bienvenida a nuestro portal">
-    </li>
-    <li><img class="slide" src="./img/img2.png" alt="¿Que es el Banco Mundial?"></li>
-    <li> <img class="slide" src="./img/img3.png" alt="¿Que te ofrecemos"></li>
-  </ul>
-  </div>
-<button class="boton negrita" type="button" id="explorar">EXPLORAR DATOS</button>
-</div>
-</section> 
- 
-<!-- Pantalla de Portal de Datos -->
-  <section class="contenedor2 ocultar negrita" id="portal-datos">
-      <div class="descripcion ocultar negrita" id="info-tab4">
-          <h4 class="texto">Somos un equipo multidisciplinario y emprendedor, que cuenta con un staff de profesionales en el área técnica, económica y social. Nuestra misión es ofrecer a la comunidad un análisis socioeconómico de los mercados emergentes en America Latina
-          </h4>
-        </div>
-        <div class="descripcion ocultar negrita" id="info-tab5">
-           <p class="texto">Nuestra Base de Datos cuenta con información veráz y confiable; proveniente del Banco Mundial. El acceso a nuestro portal es gratuito y con un formato facil de entender. Te invitamos a que lo pruebes ingresando <span class="negrita blanco"><a href="#">AQUI</a></span></p>
-         </div>
-         <div class="descripcion ocultar negrita centrado" id="info-tab6">
-             <p class="texto">Para mayor información, siguenos nuestras redes sociales <a href="mailto:yeniree17@gmail.com"><img class="rrss" src="./img/mail.svg" alt="email"></a>
-               <a href="#"><img class="rrss" src="./img/facebook.svg" alt="fb"></a>
-               <a href="#"><img class="rrss" src="./img/instagram.svg" alt="ig"></a>
-               <a href="#"><img class="rrss" src="./img/twitter.svg" alt="tw"></a>
-               <a href="#"><img class="rrss" src="./img/github-logo.svg" alt="gh"></a></p>
+<body>
+ <!-- Menú de navegación -->
+   <nav id="menu" class="menu-nav verde hide flex">
+     <p id= "nombre-usuario" class="bold usuario"></p>
+     <a href="#" id= "cerrar-sesion" class="sesion-cerrar">Cerrar sesión</a>
+   </nav>
+ <main>
+   <!-- Pantalla de Logueo -->
+     <section id="vista-logueo" class="contenedor flex">
+         <img alt="logo-principal" class="logo" src="img/logo-principal.jpeg" >
+         <form class="formulario flex">
+           <input class="inputs flex" id="email" placeholder="ejemplo@hotmail.com" type="text">
+           <input class="inputs flex" id="password" placeholder="Contraseña" type="password">
+           <div id="botones-logueo" class="recuadro flex">
+             <button class= "buttons verde bold" type="submit" id="btn-ingresar">INGRESA</button>
+             <p class="flex">¿No tienes una cuenta? <a href="#" id="enlace-registrar" class="azul bold">Regístrate</a></p>
+             <p id="error" class="error"></p>
+             <p id= "registro-exitoso"></p>
            </div>
-      <div class="seccion-resultado">
-    <form class="fondo-blanco recuadro-lateral" id="buscador">
-      <div id="seleccionar-pais">
-       <p class="blanco parametro">PAISES</p>
-        <div class= "listado" id= "lista-paises">
-        </div>
-      </div>   
-      <div id="seleccionar-indicador">
-        <p class=" blanco parametro">INDICADOR</p>
-        <select class="caja-indicadores" name="indicadores" id="lista-indicadores">
-      <option disabled selected>Seleccione un indicador</option>
-        </select>
-
-      </div>
-        <div id="seleccionar-periodo">
-        <p class=" blanco parametro">PERIODO</p>
-        <label class="etiqueta">Desde:</label>
-        <select name="fecha1" id="fecha1">
-          <option disabled value = "0" selected>--Año--</option>
-        </select>
-        <label class="etiqueta">Hasta:</label>
-        <select name="fecha2" id="fecha2">
-          <option disabled  value = "0" selected >--Año--</option>
-        </select>
-        </div>
-        <button class="boton negrita" type="button" id="consultar">CONSULTAR</button>
-      </form>
-        <div class = " recuadro-resultado ocultar" id="resultado">
-          <table class= "tabla-datos ocultar" id="tabla"> 
-          </table>
-          <div class="area-btn ocultar" id="botones-ordenar">
-          <button class="boton margen negrita" type="button" id="btn-ascend">Orden Ascendente</button>
-          <button class="boton negrita" type="button" id="btn-descend">Orden Descendente</button>
-          </div>
-          <div class="area-btn ocultar" id="boton-promedio">
-          <button class="boton margen negrita" type="button" id="promedio">Calcular Promedio</button>
-          <p class="banco-mundial centrado" id="valor-promedio"></p>
-          <a class="link" id="borrar">Volver al Inicio</a>
-          </div>
-          <!-- <canvas class = "ocultar" id="grafico">
-          </canvas> -->
-        </div>
-      </div>
-  </section>
+         </form>
+     </section>
+     <!-- Pantalla de registro -->
+     <section id= "vista-registro" class="hide registro flex">
+       <form class="formulario">
+         <input class="inputs flex" id= "name" placeholder="Nombre" type="text">
+         <input class="inputs flex" id= "new-email" placeholder="ejemplo@hotmail.com" type="email">
+         <input class="inputs flex" id="new-password" placeholder="Contraseña nueva" type="password">
+       </form>
+         <button class="buttons verde bold" type="submit" id="btn-registrarte">REGISTRAR</button>
+         <p class="error" id = "error-registro" > </p>
+     </section>
+     <!--Ventana modal-->
+     <!-- <section id="modal" class="modal hide">
+       <div id="modalcontenido" class="modalcontenido">
+           <span class="cerrar" id="cerrar">&times;</span>
+           <p class="textModal">¡Se ha registrado exitosamente!</p>
+       </div>
+   </section> -->
+   <!-- Pantalla de inicio -->
+   <section id= "seccion-perfil" class="perfil flex hide">
+     <p id= "bienvenida"></p>
+     <textarea id="escribir-post" class= "text-area"></textarea>
+     <input type="file" id="subir-imagen">
+     <button class="btn-postear bold" type="submit" id="publicar-post">Publicar</button>
+     <div id="post-publicados" class="posts"></div>
+   </section>
  </main>
-  <!--Pie de pagina-->
-  <footer class="negrita ocultar" id="pie-pagina">
-    <p class="txt-final">© Todos los Derechos Reservados | Accede a la Base de Datos <span class=""><a href="https://datos.bancomundial.org/">Banco Mundial</a></span></p>
-    <p class="txt-final">Desarrollado por Rosly-Sisley Company 2019</p>
-  </footer>
-
-  <script src="./data/worldbank/worldbank.js"></script>
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+ <script type ="text/javascript" src="data.js"></script>
+ <script type ="text/javascript" src="main.js"></script>
 </body>
-
 </html>
