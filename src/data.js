@@ -26,13 +26,9 @@ const asdValor = (array) =>{
       return -1;
   });
 };
-// Funcion Ordenar Descendente
-const desValor = (array) =>{
-  return array.sort((valor1, valor2) => {
-    if (valor1.value > valor2.value) return -1;
-    else
-      return 1;
-  });
+const eliminarElementoArray = (arr, indice) => {
+  arr.splice(indice, 1);
+  return arr;
 };
 /* Funcion para obtener promedio*/
 let suma = 0;
@@ -52,4 +48,12 @@ window.bancoMundial = {
   desValor: desValor,
   nombreIndicadorPorPais: nombreIndicadorPorPais, 
   calcularProm: calcularProm,
+};
+window.redSocial = {
+  validarEmail: validarEmail,
+  obtenerLocalStorage: obtenerLocalStorage,
+  actualizarLocalStorage: actualizarLocalStorage,
+  eliminarElementoArray: eliminarElementoArray,
+  guardarElementoArray: guardarElementoArray,
+  pintarArray: pintarArray,
 };

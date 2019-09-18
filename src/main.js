@@ -1,11 +1,3 @@
-/* Manejo del DOM */
-/* Display de pantalla */
-const logueo = document.getElementById('logueo');
-const bienvenida = document.getElementById('bienvenida');
-const portalDatos = document.getElementById('portal-datos');
-const piePagina = document.getElementById('pie-pagina');
-const encabezado = document.getElementById('encabezado');
-
 /* Obtención de parámetros del portal de Datos */
 const listaPaises = document.getElementById('lista-paises');
 const listaIndicadores = document.getElementById('lista-indicadores');
@@ -159,17 +151,7 @@ const opcionesLista = (opcion) => {
   for (let i = 0; i < opcion.length; i++) {
     nombreIndicadores += `<option value='${opcion[i].split('-')[0]}-${i}'>${opcion[i]}</option>`;
   }
-  return nombreIndicadores;
 };
-
-/* funcion para capturar la seleccion del pais desde el input radio */
-//  Devuelve los paises para seleccionarlos con radio 
-listaPaises.addEventListener('change', (event) => { // Funcion para acceder a los indicadores cuando el usuario escoge un pais
-  const paisSeleccionado = event.target.value;
-  listaIndicadores.innerHTML = opcionesLista(nombreIndicadorPorPais(indicadorPorPais(WORLDBANK, paisSeleccionado)));
-  // console.log(paisSeleccionado);
-  // output de test de nombreIndicadorPorPais
-});
 
 /* funcion para vincular los indicadores con la data de años en el html */
 listaIndicadores.addEventListener('change', (event) => {
@@ -260,8 +242,6 @@ btnAscend.addEventListener('click', () => {
       <td>${newArr[x].value === '' ? 'No tiene valor' : newArr[x].value.toFixed(2)}</td>
       </tr>`;
   }
-  areaTabla.innerHTML = strYears;
-  console.log(asdValor(nuevoArray));
 });
 
 btnDescend.addEventListener('click', () => {
